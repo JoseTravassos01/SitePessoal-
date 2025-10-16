@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Seu Nome] | Landing Page Profissional</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="landing-container">
+        <div class="sticky-column">
+            <h1 id="sticky-title">Olá.</h1>
+        </div>
+
+        <div class="scroll-column">
+           <section data-title="Quem sou eu">
+    <div class="card">
+        <div class="intro-content">
+            <div class="profile-picture">
+                <img src="eu.jpg" alt="Foto de [Seu Nome]">
+            </div>
+
+            <div class="intro-text">
+                <h2>Eu sou <strong>José Olavo, </strong> um Estudante de Ciência da Computação na Unifal-MG.</h2>
+                <p>Role para baixo para conhecer minha jornada.</p>
+            </div>
+        </div>
+
+        <div class="arrow-down"></div>
+    </div>
+</section>
+
+            <section data-title="Habilidades">
+                <div class="card">
+                    <h2>Minhas Ferramentas</h2>
+                    <div class="skills-grid">
+                        <span>JAVA</span>
+                        <span>C/C++</span>
+                        <span>SpringBoot</span>
+                        <span>MySQL (SQL e JDBC)</span>
+                        <span>Git</span>
+                        <span>Linux</span>
+                    </div>
+                </div>
+            </section>
+
+            <section data-title="Projetos">
+                <div class="card">
+                    <h2>Trabalhos Recentes</h2>
+                    <div class="project-list">
+                        <a href="https://github.com/JoseTravassos01/projetoDeBD" target="_blank">
+                            <strong>Universidade Next Level</strong>
+                            <span>Projeto de criação de um banco de dados da disciplina Banco de Dados [DCE534] (A) (08) - 2024/2, ministrada pela professora Mariane Moreira de Souza.</span>
+                        </a>
+                        <a href="https://github.com/JoseTravassos01/projetoDeGestao_Final" target="_blank">
+                            <strong>Blue Velvet Music Store Application</strong>
+                            <span>Este repositório contém uma aplicação completa separada em Frontend e Backend. A aplicação é uma loja de música chamada Blue Velvet Music Store.</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+           <section data-title="Contato">
+    <div class="card">
+        <h1>Me encontre nas redes abaixo:</h1>
+        
+        <div class="contact-links-container">
+            <a href= "https://www.linkedin.com/in/jose-olavo-monteiro-5903b3338/" target="_blank" class="contact-button">LinkedIn</a>
+            <a href="https://www.instagram.com/joseolavomtps?igsh=OHdyeGNvaDRmbDZ0&utm_source=qr" target="_blank" class="contact-button">Instagram</a>
+        </div>
+    </div>
+</section>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stickyTitle = document.getElementById('sticky-title');
+            const sections = document.querySelectorAll('.scroll-column section');
+
+            // Esta função usa o IntersectionObserver para detectar qual seção está visível
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Quando uma seção entra na tela, pega o título do atributo 'data-title'
+                        stickyTitle.textContent = entry.target.getAttribute('data-title');
+                    }
+                });
+            }, { threshold: 0.6 }); // 'threshold: 0.6' significa que a ação dispara quando 60% da seção está visível
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

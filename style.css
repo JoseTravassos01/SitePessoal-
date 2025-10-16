@@ -1,0 +1,186 @@
+/* ---- CONFIGURAÇÃO GERAL E TEMA ---- */
+:root {
+    --text-color: #f0f0f0;
+    --primary-color: #00aaff;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
+    overflow: hidden; /* Previne rolagem do body */
+}
+
+/* Animação do fundo gradiente */
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---- LAYOUT PRINCIPAL ---- */
+.landing-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sticky-column {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: sticky; /* A MÁGICA ACONTECE AQUI */
+    top: 0;
+}
+
+.scroll-column {
+    flex-basis: 60%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory; /* Faz a rolagem "travar" em cada seção */
+    height: 100vh;
+}
+
+.scroll-column section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    scroll-snap-align: start; /* Ponto de "travamento" da rolagem */
+    opacity: 0;
+    animation: fade-in 1s forwards;
+}
+@keyframes fade-in { to { opacity: 1; } }
+
+#sticky-title {
+    font-size: 6vw;
+    font-weight: 700;
+    color: var(--text-color);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ---- ESTILO DOS CARDS (GLASSMORPHISM) ---- */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+    width: 100%;
+    max-width: 600px;
+    animation: slide-up 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+@keyframes slide-up {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* ---- COMPONENTES ESPECÍFICOS ---- */
+.skills-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1.5rem; }
+.skills-grid span { background: var(--card-border); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; }
+
+.project-list a { display: block; padding: 1rem; border-radius: 8px; text-decoration: none; color: var(--text-color); margin-bottom: 1rem; transition: background 0.3s; }
+.project-list a:hover { background: var(--card-border); }
+.project-list a strong { display: block; font-size: 1.2rem; }
+
+.button { display: inline-block; background: var(--primary-color); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 1.5rem; transition: transform 0.3s; }
+.button:hover { transform: scale(1.05); }
+
+.arrow-down { width: 30px; height: 30px; border-left: 2px solid var(--text-color); border-bottom: 2px solid var(--text-color); transform: rotate(-45deg); margin: 2rem auto 0; animation: bounce 2s infinite; }
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(-45deg); } 40% { transform: translateY(-15px) rotate(-45deg); } 60% { transform: translateY(-7px) rotate(-45deg); } }
+
+/* ---- RESPONSIVIDADE ---- */
+@media (max-width: 900px) {
+    .landing-container { flex-direction: column; }
+    .sticky-column { position: relative; height: 40vh; text-align: center; }
+    .scroll-column { height: auto; overflow: visible; scroll-snap-type: none; }
+    .scroll-column section { height: auto; min-height: 60vh; }
+    #sticky-title { font-size: 12vw; }
+}
+
+/* ---- ESTILOS PARA A FOTO DE PERFIL (ADICIONE AO FINAL DO SEU CSS) ---- */
+
+.intro-content {
+    display: flex;
+    align-items: center; /* Alinha a foto com o texto verticalmente */
+    gap: 2rem; /* Espaço entre a foto e o texto */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Deixa a foto redonda */
+    object-fit: cover; /* Garante que a foto não fique distorcida */
+    border: 3px solid var(--card-border); /* Borda sutil no estilo glassmorphism */
+}
+
+.intro-text h2 {
+    font-size: 1.8rem; /* Ajuste de fonte para o novo layout */
+}
+
+/* ---- AJUSTE DE RESPONSIVIDADE PARA A FOTO ---- */
+@media (max-width: 600px) {
+    .intro-content {
+        flex-direction: column; /* Empilha a foto e o texto na vertical */
+        text-align: center; /* Centraliza o texto no mobile */
+        gap: 1.5rem;
+    }
+
+    .intro-text h2 {
+        font-size: 1.5rem;
+    }
+}
+/* ---- ESTILOS PARA OS NOVOS BOTÕES DE CONTATO (ADICIONE AO FINAL DO SEU CSS) ---- */
+
+.contact-links-container {
+    display: flex;
+    justify-content: center; /* Centraliza os botões no card */
+    gap: 1.5rem; /* Espaço entre os botões */
+    margin-top: 2rem; /* Espaço acima dos botões */
+    flex-wrap: wrap; /* Garante que os botões quebrem a linha em telas pequenas */
+}
+
+.contact-button {
+    display: inline-block;
+    background: transparent; /* Fundo transparente inicialmente */
+    border: 2px solid var(--primary-color); /* Borda com a cor primária do site */
+    color: var(--primary-color); /* Texto com a cor primária */
+    padding: 0.8rem 2rem;
+    border-radius: 50px; /* Bordas bem arredondadas para o formato "pílula" */
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background: var(--primary-color); /* Preenche o fundo no hover */
+    color: #ffffff; /* Texto fica branco no hover */
+    transform: translateY(-3px); /* Efeito sutil de levantar */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidade */
+}
