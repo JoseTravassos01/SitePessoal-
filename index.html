@@ -1,99 +1,86 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>José Travassos | SitePessoal</title>
+    <title>José Olavo - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="landing-container">
-        <div class="sticky-column">
-            <h1 id="sticky-title">Olá.</h1>
-        </div>
-
-        <div class="scroll-column">
-           <section data-title="Quem sou eu">
-    <div class="card">
-        <div class="intro-content">
-            <div class="profile-picture">
-                <img src="eu.jpg" alt="Foto de [Seu Nome]">
+    <div class="page-container">
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="botoes">
+                    <span class="botao fechar"></span>
+                    <span class="botao minimizar"></span>
+                    <span class="botao maximizar"></span>
+                </div>
+                <div class="titulo-terminal">joseolavo@portfolio: ~</div>
             </div>
+            <div class="terminal-body">
+                <p><span class="prompt">joseolavo@portfolio:~$</span> cd ./SitePessoal</p>
+                <p><span class="prompt">joseolavo@portfolio:~/SitePessoal$</span> whoami</p>
+                        <h1>José Olavo Monteiro Travassos Pereira da Silva</h1>
+                 <p>Script de apresentação iniciado. Sou um desenvolvedor focado em construir soluções robustas e escaláveis. Minha jornada na tecnologia é movida pela curiosidade e pelo desafio de transformar ideias complexas em software funcional.</p>
+                <p><span class="prompt">joseolavo@portfolio:~/SitePessoal$</span> cat ./jose_olavo.jpg</p>
 
-            <div class="intro-text">
-                <h2>Eu sou <strong>José Olavo, </strong> um Estudante de Ciência da Computação na Unifal-MG.</h2>
-                <p>Role para baixo para conhecer minha jornada.</p>
-            </div>
-        </div>
+               
+               
+                
+                <p><span class="prompt">joseolavo@portfolio:~/SitePessoal$</span> ls ./interesses</p>
+                <div class="secao-output">
+                    <h2>Interesses e Habilidades</h2>
+                    
+                    <div class="interesse">
+                        <h3>./programacao_web</h3>
+                        <p>Crio experiências de ponta a ponta, dominando o front-end com HTML, CSS e JavaScript. Para aplicações complexas e escaláveis, utilizo TypeScript e frameworks modernos como React ou Vue.js. No back-end, construo APIs ágeis com Node.js e Express, conectando a interface do usuário à lógica de negócios de forma eficiente e segura.</p>
+                    </div>
 
-        <div class="arrow-down"></div>
-    </div>
-</section>
+                    <div class="interesse">
+                        <h3>./java_ecosystem</h3>
+                        <p>Utilizo Java e o ecossistema Spring (especialmente Spring Boot) para desenvolver microsserviços e APIs RESTful de alta performance. Gerencio dependências com Maven/Gradle e utilizo JPA/Hibernate para a persistência de dados. Atualmente, aprofundo meus conhecimentos em containerização com Docker e orquestração com Kubernetes, visando a automação do deploy em ambientes de nuvem.</p>
+                        <ul>
+                            <li>Spring Boot & Spring MVC</li>
+                            <li>JPA / Hibernate ORM</li>
+                            <li>Docker & Fundamentos de Kubernetes</li>
+                        </ul>
+                    </div>
 
-            <section data-title="Habilidades">
-                <div class="card">
-                    <h2>Minhas Ferramentas</h2>
-                    <div class="skills-grid">
-                        <span>JAVA</span>
-                        <span>C/C++</span>
-                        <span>SpringBoot</span>
-                        <span>MySQL (SQL e JDBC)</span>
-                        <span>Git</span>
-                        <span>Linux</span>
+                    <div class="interesse">
+                        <h3>./banco_de_dados</h3>
+                        <p>Tenho sólida experiência com bancos de dados relacionais e não relacionais. Desde a modelagem, normalização e otimização de queries em PostgreSQL e MySQL, até a flexibilidade de bancos NoSQL como MongoDB para esquemas dinâmicos. Também exploro soluções de cache em memória como Redis para maximizar a performance de aplicações.</p>
                     </div>
                 </div>
-            </section>
 
-            <section data-title="Projetos">
-                <div class="card">
-                    <h2>Trabalhos Recentes</h2>
-                    <div class="project-list">
-                        <a href="https://github.com/JoseTravassos01/projetoDeBD" target="_blank">
-                            <strong>Universidade Next Level</strong>
-                            <span>Projeto de criação de um banco de dados da disciplina Banco de Dados [DCE534] (A) (08) - 2024/2, ministrada pela professora Mariane Moreira de Souza.</span>
-                        </a>
-                        <a href="https://github.com/JoseTravassos01/projetoDeGestao_Final" target="_blank">
-                            <strong>Blue Velvet Music Store Application</strong>
-                            <span>Este repositório contém uma aplicação completa separada em Frontend e Backend. A aplicação é uma loja de música chamada Blue Velvet Music Store.</span>
-                        </a>
-                    </div>
+                <p><span class="prompt">joseolavo@portfolio:~/SitePessoal$</span> cat ./formacao.txt</p>
+                <div class="secao-output">
+                    <h2>Formação Acadêmica</h2>
+                    <p><strong>Universidade Federal de Alfenas – Unifal – Alfenas – Minas Gerais</strong></p>
+                    <ul>
+                        <li>Bacharelado em Ciência da Computação, 2023 – Atualmente.</li>
+                    </ul>
                 </div>
-            </section>
 
-           <section data-title="Contato">
-    <div class="card">
-        <h1>Me encontre nas redes abaixo:</h1>
-        
-        <div class="contact-links-container">
-            <a href= "https://www.linkedin.com/in/jose-olavo-monteiro-5903b3338/" target="_blank" class="contact-button">LinkedIn</a>
-            <a href="https://www.instagram.com/joseolavomtps?igsh=OHdyeGNvaDRmbDZ0&utm_source=qr" target="_blank" class="contact-button">Instagram</a>
+                <p><span class="prompt">joseolavo@portfolio:~/SitePessoal$</span> mail --contact</p>
+                <div class="secao-output">
+                    <h2>Contato</h2>
+                    <ul>
+                        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jose-olavo-monteiro-5903b3338">LinkedIn/Jose_Olavo</a></li>
+                        <li><strong>GitHub:</strong> <a href="https://github.com/JoseTravassos01" target="_blank">github.com/JoseTravassos01</a></li>
+                    </ul>
+                </div>
+                
+                <p><span class="prompt">joseolavo@portfolio:~/SitePessoal$</span><span class="cursor">_</span></p>
+            </div>
+        </div>
+
+        <div id="profile-picture" class="profile-picture-container">
+            <img src="eu.jpg" alt="Foto de perfil de José Olavo">
         </div>
     </div>
-</section>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const stickyTitle = document.getElementById('sticky-title');
-            const sections = document.querySelectorAll('.scroll-column section');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        
-                        stickyTitle.textContent = entry.target.getAttribute('data-title');
-                    }
-                });
-            }, { threshold: 0.6 }); 
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
-</body>
+    </body>
 </html>
